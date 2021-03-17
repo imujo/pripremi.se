@@ -1,7 +1,7 @@
 const Body = (params) => {
     return(
-        <div>
-            Body
+        <div className='bodyDiv'>
+            
         </div>
     )
 }

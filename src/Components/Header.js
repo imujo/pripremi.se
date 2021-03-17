@@ -1,7 +1,8 @@
 const Header = (params) => {
     return(
-        <div>
-            Header
+        <div className='headerDiv'>
+            <h1>PRIPREMI</h1>
+            <h1 className='titleNastavak'>SE</h1>
         </div>
     )
 }
