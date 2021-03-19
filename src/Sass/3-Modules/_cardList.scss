@@ -1,0 +1,38 @@
+.cardListDiv {
+  width: 95%;
+  height: 80%;
+  max-width: 1500px;
+  position: relative;
+  .cardDiv {
+    height: 500px;
+    width: 400px;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 90%;
+    justify-content: center;
+    .cardTitlePictureDiv {
+      background-color: beige;
+      margin-top: 20px;
+      width: 100%;
+      height: 100px;
+    }
+  }
+}
+
+.gradientLeft {
+  height: 600px;
+  width: 60px;
+  background-image: linear-gradient(to right, rgb(250, 250, 250), transparent);
+  background-color: transparent;
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.gradientRight {
+  @extend .gradientLeft;
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(to left, rgb(250, 250, 250), transparent);
+}

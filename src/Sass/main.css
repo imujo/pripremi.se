@@ -4,6 +4,12 @@ h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
 body {
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -15,14 +21,25 @@ body {
 }
 
 .headerDiv {
-  height: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 25%;
+}
+
+.headerDiv .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-left: 150px;
+  max-width: 1100px;
 }
 
 .headerDiv h1 {
@@ -30,11 +47,79 @@ body {
 }
 
 .headerDiv .titleNastavak {
-  color: grey;
+  color: #adadad;
+}
+
+@media screen and (max-width: 1100px) {
+  .headerDiv .title {
+    padding-left: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .headerDiv h1 {
+    padding-bottom: 0;
+  }
 }
 
 .bodyDiv {
   background-color: #fafafa;
   height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cardListDiv {
+  width: 95%;
+  height: 80%;
+  max-width: 1500px;
+  position: relative;
+}
+
+.cardListDiv .cardDiv {
+  height: 500px;
+  width: 400px;
+  background-color: aquamarine;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cardListDiv .cardDiv .cardTitlePictureDiv {
+  background-color: beige;
+  margin-top: 20px;
+  width: 100%;
+  height: 100px;
+}
+
+.gradientLeft, .gradientRight {
+  height: 600px;
+  width: 60px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fafafa), to(transparent));
+  background-image: linear-gradient(to right, #fafafa, transparent);
+  background-color: transparent;
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.gradientRight {
+  right: 0;
+  top: 0;
+  background-image: -webkit-gradient(linear, right top, left top, from(#fafafa), to(transparent));
+  background-image: linear-gradient(to left, #fafafa, transparent);
 }
 /*# sourceMappingURL=main.css.map */

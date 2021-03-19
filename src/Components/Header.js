@@ -1,8 +1,11 @@
-const Header = (params) => {
+const Header = () => {
+    console.log(window.innerWidth)
     return(
         <div className='headerDiv'>
-            <h1>PRIPREMI</h1>
-            <h1 className='titleNastavak'>SE</h1>
+            <div className="title">
+                <h1>PRIPREMI</h1>
+                <h1 className='titleNastavak'>SE</h1>
+            </div>
         </div>
     )
 }
