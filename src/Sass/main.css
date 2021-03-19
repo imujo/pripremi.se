@@ -10,16 +10,6 @@ h1 {
   }
 }
 
-body {
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.appDiv {
-  height: 100vh;
-}
-
 .headerDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,6 +52,16 @@ body {
   }
 }
 
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.appDiv {
+  height: 100vh;
+}
+
 .bodyDiv {
   background-color: #fafafa;
   height: 75%;
@@ -83,7 +83,24 @@ body {
   position: relative;
 }
 
-.cardListDiv .cardDiv {
+.cardListDiv .gradientLeft, .cardListDiv .gradientRight {
+  height: 600px;
+  width: 60px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fafafa), to(transparent));
+  background-image: linear-gradient(to right, #fafafa, transparent);
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.cardListDiv .gradientRight {
+  right: 0;
+  top: 0;
+  background-image: -webkit-gradient(linear, right top, left top, from(#fafafa), to(transparent));
+  background-image: linear-gradient(to left, #fafafa, transparent);
+}
+
+.cardDiv {
   height: 500px;
   width: 400px;
   background-color: aquamarine;
@@ -98,28 +115,16 @@ body {
           justify-content: center;
 }
 
-.cardListDiv .cardDiv .cardTitlePictureDiv {
+.cardDiv .cardTitlePictureDiv {
   background-color: beige;
   margin-top: 20px;
   width: 100%;
   height: 100px;
 }
 
-.gradientLeft, .gradientRight {
-  height: 600px;
-  width: 60px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#fafafa), to(transparent));
-  background-image: linear-gradient(to right, #fafafa, transparent);
-  background-color: transparent;
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-}
-
-.gradientRight {
-  right: 0;
-  top: 0;
-  background-image: -webkit-gradient(linear, right top, left top, from(#fafafa), to(transparent));
-  background-image: linear-gradient(to left, #fafafa, transparent);
+@media screen and (max-width: 500px) {
+  .cardDiv {
+    width: 350px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

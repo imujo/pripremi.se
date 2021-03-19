@@ -9,6 +9,7 @@ const CardList = () => {
         fixedWidth: 370,
         drag: true,
         gap: '100px',
+        focus: 'center',
     }
     return(
         <div className='cardListDiv'>

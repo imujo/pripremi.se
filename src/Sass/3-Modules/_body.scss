@@ -1,5 +1,15 @@
+// WEBSITE
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+.appDiv {
+  height: 100vh;
+}
+
+// BODY DIV
 .bodyDiv {
-  background-color: rgb(250, 250, 250);
+  background-color: $backgroundColor;
   height: 75%;
   display: flex;
   align-items: center;
