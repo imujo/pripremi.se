@@ -2,7 +2,7 @@
   "name": "pripremi.se",
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://github.com/imujo/pripremi.se",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.4.4",
