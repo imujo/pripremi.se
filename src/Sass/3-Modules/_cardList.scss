@@ -1,44 +1,29 @@
 // CARD LIST
 .cardListDiv {
-  width: 95%;
+  width: 80%;
   height: 80%;
-  max-width: 1500px;
+  max-width: 1200px;
+  margin-top: 200px;
   position: relative;
-  .gradientLeft {
-    height: 600px;
-    width: 60px;
-    background-image: linear-gradient(to right, $backgroundColor, transparent);
-    position: absolute;
-    pointer-events: none;
-    z-index: 100;
-  }
-  .gradientRight {
-    @extend .gradientLeft;
-    right: 0;
-    top: 0;
-    background-image: linear-gradient(to left, $backgroundColor, transparent);
-  }
 }
 
-// CARD
-.cardDiv {
-  height: 500px;
-  width: 400px;
-  background-color: aquamarine;
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 90%;
-  justify-content: center;
-  .cardTitlePictureDiv {
-    background-color: beige;
-    margin-top: 20px;
-    width: 100%;
-    height: 100px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cardDiv {
-    width: 350px;
-  }
-}
+// GRADIENT
+// .gradientLeft {
+//   height: 600px;
+//   width: 60px;
+//   background-image: linear-gradient(to right, $backgroundColor, transparent);
+//   background-color: $backgroundColor;
+//   position: absolute;
+//   pointer-events: none;
+//   z-index: 100;
+// }
+// .gradientRight {
+//   height: 600px;
+//   width: 60px;
+//   background-image: linear-gradient(to right, $backgroundColor, transparent);
+//   position: absolute;
+//   pointer-events: none;
+//   z-index: 100;
+//   right: -10px;
+//   top: 0;
+// }
