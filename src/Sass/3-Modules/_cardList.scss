@@ -1,9 +1,9 @@
 // CARD LIST
 .cardListDiv {
   width: 80%;
-  height: 80%;
+  height: auto;
+  padding-bottom: 100px;
   max-width: 1200px;
-  margin-top: 200px;
   position: relative;
 }
 
@@ -27,3 +27,9 @@
 //   right: -10px;
 //   top: 0;
 // }
+
+@media (max-width: 500px) {
+  .cardListDiv {
+    padding-bottom: 100px;
+  }
+}

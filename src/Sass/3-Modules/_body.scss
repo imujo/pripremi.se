@@ -2,15 +2,13 @@
 body {
   margin: 0;
   box-sizing: border-box;
-}
-.appDiv {
-  height: 100vh;
+  height: 100%;
 }
 
 // BODY DIV
 .bodyDiv {
   background-color: $backgroundColor;
-  height: 90%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
