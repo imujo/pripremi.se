@@ -5,15 +5,16 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 const CardList = () => {
 
     const primaryOptions = {
-        type: 'loop',
-        fixedWidth: 370,
+        type: 'slide',
+        autoWidth: true,
         drag: true,
-        gap: '100px',
+        gap: '80px',
+        perPage: 3,
         focus: 'center',
     }
     return(
         <div className='cardListDiv'>
-            <div className="gradientLeft"></div>
+            {/* <div className="gradientLeft"></div> */}
             <Splide  options={primaryOptions}>
                 <SplideSlide><Card /></SplideSlide>
                 <SplideSlide><Card /></SplideSlide>
@@ -21,7 +22,7 @@ const CardList = () => {
                 <SplideSlide><Card /></SplideSlide>
                 <SplideSlide><Card /></SplideSlide>
             </Splide>
-            <div className="gradientRight"></div>
+            {/* <div className="gradientRight"></div> */}
         </div>
     )
 }

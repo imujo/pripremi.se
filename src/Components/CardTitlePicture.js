@@ -1,9 +1,11 @@
 
 
-const CardTitlePicture = () => {
+
+
+const CardTitlePicture = ({isactive, resize}) => {
+    
     return(
-        <div className='cardTitlePictureDiv'>
-            
+        <div className='cardTitlePictureDiv' isactive={isactive} resize={resize} >
         </div>
     )
 }
