@@ -68,19 +68,51 @@ body {
 .bodyDiv {
   background-color: #f7f7f7;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: 80%;
+      grid-template-columns: 80%;
+  -ms-grid-rows: 60% 20%;
+      grid-template-rows: 60% 20%;
+}
+
+.preuzmiButton {
+  cursor: pointer;
+  width: 200px;
+  height: 80px;
+  border: none;
+  outline: none;
+  background-color: #a52828;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  -webkit-box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.301);
+          box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.301);
+}
+
+.preuzmiButton:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.preuzmiButton:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .cardListDiv {
-  width: 80%;
+  width: 100%;
   height: auto;
   padding-bottom: 100px;
   max-width: 1200px;

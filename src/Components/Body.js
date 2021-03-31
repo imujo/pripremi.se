@@ -4,6 +4,7 @@ const Body = () => {
     return(
         <div className='bodyDiv'>
             <CardList />
+            <button className='preuzmiButton'>PREUZMI</button>
         </div>
     )
 }
