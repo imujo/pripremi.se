@@ -6,6 +6,13 @@ h1 {
   font-weight: 500;
 }
 
+h3 {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
 @media screen and (max-width: 700px) {
   h1 {
     font-size: 50px;
@@ -55,6 +62,12 @@ h1 {
   }
   .headerDiv h1 {
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .headerDiv {
+    height: 60vh;
   }
 }
 
@@ -111,6 +124,18 @@ body {
           box-shadow: none;
 }
 
+@media (max-width: 500px) {
+  .bodyDiv {
+    height: auto;
+    padding-top: 100px;
+  }
+  .preuzmiButton {
+    width: 125px;
+    height: 50px;
+    font-size: 12.5px;
+  }
+}
+
 .cardListDiv {
   width: 100%;
   height: auto;
@@ -132,9 +157,18 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.cardDiv[isactive="1"][resize="0"] {
+  -ms-grid-rows: 40% 30% 30%;
+      grid-template-rows: 40% 30% 30%;
+  justify-items: center;
 }
 
 .cardDiv .imageAnimation {
@@ -157,9 +191,39 @@ body {
 }
 
 .cardDiv .imageAnimation[isactive="1"][resize="0"] {
-  height: 25%;
+  height: 62.5%;
   top: 20px;
   width: 90%;
+}
+
+.razine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 60%;
+}
+
+.razine > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input {
+  margin: 0;
+}
+
+.yearSlider {
+  width: 70%;
 }
 
 @-webkit-keyframes resizeReverse {

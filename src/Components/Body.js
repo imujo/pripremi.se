@@ -2,10 +2,10 @@ import CardList from './CardList'
 
 const Body = () => {
     return(
-        <div className='bodyDiv'>
+        <form className='bodyDiv'>
             <CardList />
-            <button className='preuzmiButton'>PREUZMI</button>
-        </div>
+            <input type="submit" className='preuzmiButton' value="PREUZMI"/>
+        </form>
     )
 }
 

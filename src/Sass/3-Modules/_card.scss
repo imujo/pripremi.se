@@ -4,7 +4,15 @@
   width: 320px;
   background-color: aquamarine;
   justify-content: center;
-  display: flex; //maybe change to grid
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  &[isactive="1"][resize="0"] {
+    grid-template-rows: 40% 30% 30%;
+    justify-items: center;
+  }
+
   //ANIMATION
   .imageAnimation {
     background-color: beige;
@@ -22,11 +30,30 @@
     }
     //is selected style
     &[isactive="1"][resize="0"] {
-      height: 25%;
+      height: 62.5%;
       top: 20px;
       width: 90%;
     }
   }
+}
+
+.razine {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  & > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+input {
+  margin: 0;
+}
+
+.yearSlider {
+  width: 70%;
 }
 
 @keyframes resizeReverse {
