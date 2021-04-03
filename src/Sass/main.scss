@@ -1,5 +1,6 @@
 // HELPERS
 @import "./1-Helpers/variables";
+@import "./1-Helpers/defaults";
 
 // BASICS
 @import "./2-Basics/fonts";
@@ -9,3 +10,5 @@
 @import "./3-Modules/body";
 @import "./3-Modules/cardList";
 @import "./3-Modules/card";
+@import "./3-Modules/nav";
+@import "./3-Modules/title";

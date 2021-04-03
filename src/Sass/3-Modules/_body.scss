@@ -4,11 +4,15 @@ body {
   box-sizing: border-box;
   height: 100%;
 }
+html {
+  width: 100%;
+}
 
 // BODY DIV
 .bodyDiv {
-  background-color: $backgroundColor;
-  height: 100vh;
+  height: calc(100vh - 150px);
+  padding-top: 50px;
+  background-color: $lightRed;
   display: grid;
   align-items: center;
   justify-content: center;

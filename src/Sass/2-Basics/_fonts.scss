@@ -1,16 +1,41 @@
 h1 {
   margin: 0;
-  font-size: 120px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  font-size: 130px;
   font-weight: 500;
+  display: flex;
+}
+
+h2 {
+  margin: 0;
+  font: normal normal 400 40px "Montserrat", sans-serif;
 }
 
 h3 {
   margin: 0;
+  color: $darkRed;
+  font: normal normal 500 25px "Montserrat", sans-serif;
+}
+
+h4 {
+  margin: 0;
+  color: $darkRed;
+  font: normal normal 400 15px "Montserrat", sans-serif;
+}
+
+.logo {
+  color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 300;
-  font-size: 17px;
+  font-weight: 600;
+  & > .nastavak {
+    color: $primaryColor;
+  }
+}
+
+p {
+  color: $lightGrey;
+  font-family: "Montserrat";
+  font-size: 15px;
+  padding-bottom: 20px;
 }
 
 @media screen and (max-width: 700px) {

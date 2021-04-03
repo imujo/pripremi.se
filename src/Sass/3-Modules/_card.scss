@@ -1,46 +1,71 @@
 // CARD
 .cardDiv {
+  // Deselected
   height: 420px;
   width: 320px;
-  background-color: aquamarine;
+  background-color: $greyRed;
+  border-radius: 25px;
   justify-content: center;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 100%;
-
-  &[isactive="1"][resize="0"] {
-    grid-template-rows: 40% 30% 30%;
-    justify-items: center;
+  grid-template-rows: 30% 70%;
+  gap: 2px;
+  transform: scale(0.98);
+  &[isselected="0"] {
+    & > p {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
   }
 
-  //ANIMATION
-  .imageAnimation {
-    background-color: beige;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    justify-self: center;
-    //resizing from selected
-    &[resize="1"][isactive="0"] {
-      animation: resizeReverse 0.5s;
-    }
-    //resizing from not selected
-    &[resize="1"][isactive="1"] {
-      animation: resize 0.7s ease-out;
-    }
-    //is selected style
-    &[isactive="1"][resize="0"] {
-      height: 62.5%;
-      top: 20px;
-      width: 90%;
+  & p {
+    cursor: pointer;
+  }
+  & > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // Animations
+  &[isselected="0"][resize="1"][animationnumber="0"][selectcounter="1"] {
+    animation: select 0.15s reverse;
+  }
+  &[isselected="0"][resize="1"][animationnumber="0"] {
+    animation: select 0.15s;
+  }
+  &[isselected="0"][resize="1"][animationnumber="1"] {
+    animation: select 0.15s reverse;
+  }
+
+  // Selected
+  &[isselected="1"][resize="0"] {
+    transform: scale(1);
+    background-color: $mediumRed;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.438);
+    & > div {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 30% 35% 30%;
+      gap: 2px;
+      justify-items: center;
+      & > * {
+        width: 70%;
+      }
+      & > p {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
     }
   }
 }
 
+// FORM
 .razine {
   display: flex;
   justify-content: space-around;
-  width: 60%;
   & > * {
     display: flex;
     flex-direction: column;
@@ -48,53 +73,50 @@
   }
 }
 
-input {
-  margin: 0;
+.checkbox {
+  -webkit-appearance: none;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  &:checked {
+    background-color: $darkRed;
+  }
+  &:checked:after {
+    content: "\2713";
+    font-size: 1px;
+    font-weight: 900;
+    position: relative;
+    top: -7px;
+    left: -3px;
+    color: white;
+  }
 }
 
-.yearSlider {
-  width: 70%;
-}
-
-@keyframes resizeReverse {
+// Animations
+@keyframes select {
   100% {
-    top: 0;
+    box-shadow: none;
+    background-color: $greyRed;
   }
   50% {
-    height: 23%;
-    top: 17px;
-    width: 90%;
-  }
-  30% {
-    height: 26%;
-    top: 20px;
+    transform: scale(0.97);
   }
   0% {
-    height: 25%;
-    top: 20px;
-    width: 90%;
+    box-shadow: none;
+    background-color: $mediumRed;
+    box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.438);
   }
 }
 
-@keyframes resize {
-  0% {
-    top: 0;
-  }
-  60% {
-    height: 25%;
-    top: 20px;
-    width: 90%;
-  }
-  61% {
-    top: 18px;
-  }
-  100% {
-    height: 25%;
-    top: 20px;
-    width: 90%;
-  }
-}
-
+// MEDIA QUERIES
 @media (max-width: 500px) {
   .cardDiv {
     height: 360px;
