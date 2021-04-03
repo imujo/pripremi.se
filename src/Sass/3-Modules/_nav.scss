@@ -8,6 +8,7 @@
   gap: 0.5px;
   padding: 0 70px;
   margin: 0 auto;
+  gap: 10px;
 
   & div {
     font-size: 22px;
@@ -54,9 +55,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    color: rgb(104, 104, 104);
+
     &:hover {
       height: 98%;
       border: 1px solid grey;
@@ -64,6 +63,25 @@
     }
     &:active {
       box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.219);
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .navBody {
+    padding: 0 40px;
+    & li {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navBody {
+    padding: 0 20px;
+    height: 80px;
+    & > ul {
+      display: none;
     }
   }
 }

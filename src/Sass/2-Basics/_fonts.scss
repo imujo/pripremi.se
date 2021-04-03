@@ -38,8 +38,37 @@ p {
   padding-bottom: 20px;
 }
 
-@media screen and (max-width: 700px) {
+.subheading {
+  font: normal normal 200 20px "Montserrat", sans-serif;
+  color: $lightGrey;
+}
+
+.navFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: $grey;
+}
+
+@media (max-width: 1100px) {
   h1 {
-    font-size: 50px;
+    font-size: 100px;
+  }
+  .subheading {
+    font-size: 17px;
+  }
+  // h2 {
+  //   font-size: 20px;
+  // }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+  .subheading {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 20px;
   }
 }

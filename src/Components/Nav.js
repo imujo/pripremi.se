@@ -12,14 +12,14 @@ const Nav = () => {
                 spy={true}
                 smooth={true}
                 duration={400}>
-            <li>Mature</li></Link>
+            <li className='navFont'>Mature</li></Link>
             <Link
                 activeClass="active"
                 to=""
                 spy={true}
                 smooth={true}
                 duration={400}>
-            <li onClick={()=>alert('Work in progress')}>Natjecanja</li></Link>
+            <li onClick={()=>alert('Work in progress')} className='navFont' >Natjecanja</li></Link>
             </ul>
             <button className='kontakt' >Kontakt</button>
         </nav>
