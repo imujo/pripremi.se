@@ -58,12 +58,21 @@ p {
   color: #686868;
 }
 
+.errorFont {
+  font-size: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+}
+
 @media (max-width: 1100px) {
   h1 {
     font-size: 100px;
   }
   .subheading {
     font-size: 17px;
+  }
+  h2 {
+    font-size: 30px;
   }
 }
 
@@ -191,6 +200,8 @@ html {
   border-radius: 10px;
   color: white;
   font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   -webkit-box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.301);
           box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.301);
 }
@@ -222,7 +233,6 @@ html {
 .cardListDiv {
   width: 100%;
   height: auto;
-  padding-bottom: 30px;
   max-width: 1200px;
   position: relative;
 }
@@ -269,6 +279,7 @@ html {
           justify-content: center;
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   -ms-grid-rows: 30% 70%;
@@ -362,7 +373,7 @@ html {
       justify-content: space-around;
 }
 
-.razine > * {
+.razine > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -578,9 +589,90 @@ html {
           align-items: center;
 }
 
+@media (max-width: 1100px) {
+  .titleDiv {
+    height: 80px;
+  }
+}
+
 @media (max-width: 600px) {
   .titleDiv {
     height: 60px;
+  }
+}
+
+.razineErrorDiv {
+  width: 50px;
+  height: 60px;
+  background-color: #196d2e;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+}
+
+.razineErrorDiv[razinaerror="1"] {
+  visibility: visible;
+  -webkit-animation: flash 0.4s 2 linear;
+          animation: flash 0.4s 2 linear;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  33% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+  66% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes flash {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  33% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+  66% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 }
 /*# sourceMappingURL=main.css.map */

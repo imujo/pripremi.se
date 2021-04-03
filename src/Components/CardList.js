@@ -3,7 +3,7 @@ import Card from './Card'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useEffect, useState } from 'react';
 
-const CardList = () => {
+const CardList = ({sendRequest}) => {
 
     const primaryOptions = {
         type: 'slide',
@@ -30,6 +30,9 @@ const CardList = () => {
             .then(data => setMature(data))
     }, [])
 
+    var data = []
+
+
     
     return(
         <div className='cardListDiv'>
@@ -37,7 +40,9 @@ const CardList = () => {
             <Splide className='splide'  options={primaryOptions}>
                 {mature.map((matura, i) =>{
                     return(
-                        <SplideSlide key={i}><Card 
+                        <SplideSlide className='test' key={i}><Card 
+                            sendRequest={sendRequest}
+                            data={data}
                             predmet={matura.predmet}
                             slika={matura.slika}
                             dvijerazine={matura.dvijerazine}

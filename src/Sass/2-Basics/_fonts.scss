@@ -49,6 +49,12 @@ p {
   color: $grey;
 }
 
+.errorFont {
+  font-size: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $lightGrey;
+}
+
 @media (max-width: 1100px) {
   h1 {
     font-size: 100px;
@@ -56,9 +62,9 @@ p {
   .subheading {
     font-size: 17px;
   }
-  // h2 {
-  //   font-size: 20px;
-  // }
+  h2 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 600px) {
