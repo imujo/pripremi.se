@@ -27,7 +27,7 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
     const initialRender = useRef(true)
 
     const {isselectedn} = useContext(MatureContext)
-    const [numisselected ,setnumisselected] = isselectedn;
+    const [ ,setnumisselected] = isselectedn;
     
 
     // CHECK IF RAZINAS ARE SELECTED AND PUSH TO FETCH
@@ -37,18 +37,24 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
         }else{
             if (isselected === 1 && ((razinaA === true || razinaB === true ) || dvijerazine===false)){
                 setrazinaError(0)
-                data.push({
-                        predmet: predmet,
-                        years: years,
-                        dvijerazine: dvijerazine,
-                        razinaA: razinaA,
-                        razinaB: razinaB,
-                        razinaerror: razinaerror
-                    })
-                setrequest(data)
             }else if(isselected===1){
                 setrazinaError(1)
+ 
             }
+            
+            if (isselected ===1){
+                data.push({
+                    predmet: predmet,
+                    years: years,
+                    dvijerazine: dvijerazine,
+                    razinaA: razinaA,
+                    razinaB: razinaB,
+                })
+                setrequest(data)
+            }
+
+
+            
         } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sendRequest])
@@ -111,10 +117,6 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
         }
     }
 
-    // SET RAZINA ERROR 0 WHEN CLOSE CARD
-    useEffect(() => {
-        console.log(isselectedn[0])
-    }, [isselectedn])
   
 
     return(

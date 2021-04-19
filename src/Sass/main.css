@@ -579,7 +579,7 @@ html {
 
 @media (max-width: 600px) {
   .navBody {
-    padding: 0 20px;
+    padding: 0 0px;
     height: 80px;
   }
   .navBody > ul {
@@ -991,22 +991,26 @@ html {
 
 @media (max-width: 1100px) {
   .kontaktBody {
-    height: 150vh;
+    height: auto;
   }
   .kontaktDiv {
-    margin-top: 80px;
+    padding: 0 75px;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    -ms-grid-rows: 50% 40% 10%;
-        grid-template-rows: 50% 40% 10%;
+    -ms-grid-rows: auto auto auto;
+        grid-template-rows: auto auto auto;
     gap: 50px;
         grid-template-areas: "form" "about" ".";
   }
   .kontaktDiv form {
     max-width: 700px;
   }
+  .kontaktDiv form > * {
+    margin-top: 50px;
+  }
   .aboutDiv {
     width: 70%;
+    margin-top: 70px;
   }
 }
 

@@ -1,7 +1,7 @@
 
 import Card from './Card'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import {MatureContext} from '../State/MatureContext'
 
 const CardList = ({sendRequest}) => {

@@ -108,12 +108,12 @@
 
 @media (max-width: 1100px) {
   .kontaktBody {
-    height: 150vh;
+    height: auto;
   }
   .kontaktDiv {
-    margin-top: 80px;
+    padding: 0 75px;
     grid-template-columns: 100%;
-    grid-template-rows: 50% 40% 10%;
+    grid-template-rows: auto auto auto;
     gap: 50px;
     grid-template-areas:
       "form"
@@ -121,9 +121,13 @@
       ".";
     & form {
       max-width: 700px;
+      & > * {
+        margin-top: 50px;
+      }
     }
   }
   .aboutDiv {
     width: 70%;
+    margin-top: 70px;
   }
 }

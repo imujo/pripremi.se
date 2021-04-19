@@ -8,15 +8,21 @@ const MatureProvider = (props) => {
 
     const [request, setrequest] = useState([])
     const [sortOrder, setsortOrder] = useState('Popularno')
-    const [numisselected ,setnumisselected] = useState(0)
+    const [numisselected ,setnumisselected] = useState(0) //remove
     const [matureList, setmatureList] = useState([])
     const [matureLoaded, setmatureLoaded] = useState(false)
 
     useEffect(() => {
+        let isError = 0
+        for (const r of request){
+            if (r.dvijerazine && !r.razinaA && !r.razinaB){
+                isError ++
+            }
+        }
+
         if(initialRender.current){
             initialRender.current = false;
-        }else{
-            console.log(numisselected)
+        }else if (isError===0){
             var result = {};
             for (var i = 0; i < request.length; i++) {
                 result[request[i].predmet] = {
