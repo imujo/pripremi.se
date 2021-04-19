@@ -6,20 +6,31 @@ import { ThemeProvider } from '@material-ui/styles';
 import {MatureContext} from '../State/MatureContext'
 import RazineError from './RazineError'
 
-const Card = ({predmet, slika, dvijerazine, sendRequest, data}) => {
+const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
 
-    const [resize, setResize] = useState(0)
+    // ANIMATION & IS SELECTED
     const [isselected, setisselected] = useState(0)
-    const [selectcounter, setselectcounter] = useState(1)
-    const [animationnumber, setanimationnumber] = useState(0)
+    const [closeanimation, setcloseanimation] = useState(0)
+    const [openanimation, setopenanimation] = useState(0)
 
-    const [, setrequest] = useContext(MatureContext)
+    // GLOBAL STATE
+    const {download} = useContext(MatureContext)
+    const [, setrequest] = download;
+
+    // FORM
     const [years, setYears] = useState([2011, 2019]);
     const [razinaA, setRazinaA] = useState(false)
     const [razinaB, setRazinaB] = useState(false)
+
+    // RAZINA ERROR
     const [razinaerror, setrazinaError] = useState(0)
     const initialRender = useRef(true)
 
+    const {isselectedn} = useContext(MatureContext)
+    const [numisselected ,setnumisselected] = isselectedn;
+    
+
+    // CHECK IF RAZINAS ARE SELECTED AND PUSH TO FETCH
     useEffect(() => {
         if(initialRender.current){
             initialRender.current = false;
@@ -31,17 +42,24 @@ const Card = ({predmet, slika, dvijerazine, sendRequest, data}) => {
                         years: years,
                         dvijerazine: dvijerazine,
                         razinaA: razinaA,
-                        razinaB: razinaB
+                        razinaB: razinaB,
+                        razinaerror: razinaerror
                     })
-                console.log(data)
                 setrequest(data)
-            }else{
+            }else if(isselected===1){
                 setrazinaError(1)
             }
         } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sendRequest])
 
+    // ADD PREDMET CLICK TO DATABASE
+    useEffect(() => {
+        fetch(`http://localhost:5000/iterate/${predmet}`,{
+            method: 'post',
+            headers: {'Content-Type':'application/json'}
+        })
+    }, [isselected, predmet])
 
     const muiTheme = createMuiTheme({
         overrides:{
@@ -82,25 +100,25 @@ const Card = ({predmet, slika, dvijerazine, sendRequest, data}) => {
         })
     }
 
-
+    // ON ANIMATION END
     const selectToggle = ()=> {
-        setselectcounter(selectcounter + 1)
-        if (selectcounter % 2 === 0){
-            setanimationnumber(1)
-            setResize(0)
+
+        if (openanimation===1){
+            setopenanimation(0)
+            setisselected(1)
         }else{
-            setanimationnumber(0)
-            setResize(0)
-            if (isselected===0) setisselected(1)
-            else setisselected(0)
+            setcloseanimation(0)
         }
     }
-    
 
+    // SET RAZINA ERROR 0 WHEN CLOSE CARD
+    useEffect(() => {
+        console.log(isselectedn[0])
+    }, [isselectedn])
   
 
     return(
-        <div className='cardDiv' isselected={isselected} resize={resize} animationnumber={animationnumber} selectcounter={selectcounter} onAnimationEnd={selectToggle}>
+        <div className='cardDiv' openanimation={openanimation} isselected={isselected} closeanimation={closeanimation} onAnimationEnd={selectToggle}>
 
             <h3>{predmet}</h3>
 
@@ -147,12 +165,11 @@ const Card = ({predmet, slika, dvijerazine, sendRequest, data}) => {
                             />
                         </ThemeProvider>
                     </div>
-                    <p onClick={() => {setResize(1)
-                    setisselected(0)}} >Click to deselect</p>
+                    <p onClick={() => {setisselected(0); setcloseanimation(1); nisselected--;setnumisselected(nisselected)}} >Click to deselect</p>
                 </div>
                 
                 : 
-                <p onClick={() => setResize(1)} >Click to select</p>
+                <p onClick={() => {setopenanimation(1); nisselected=nisselected + 1; setnumisselected(nisselected)}} >Click to select</p>
             }
 
         </div>

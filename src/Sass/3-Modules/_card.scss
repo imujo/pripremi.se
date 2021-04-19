@@ -30,25 +30,22 @@
   }
 
   // Animations
-  &[isselected="0"][resize="1"][animationnumber="0"][selectcounter="1"] {
+  &[openanimation="1"] {
     animation: select 0.15s reverse;
   }
-  &[isselected="0"][resize="1"][animationnumber="0"] {
+  &[closeanimation="1"] {
     animation: select 0.15s;
-  }
-  &[isselected="0"][resize="1"][animationnumber="1"] {
-    animation: select 0.15s reverse;
   }
 
   // Selected
-  &[isselected="1"][resize="0"] {
+  &[isselected="1"][openanimation="0"][closeanimation="0"] {
     transform: scale(1);
     background-color: $mediumRed;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.438);
     & > div {
       display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: 30% 35% 30%;
+      grid-template-rows: 30% 35% 35%;
       gap: 2px;
       justify-items: center;
       & > * {

@@ -1,0 +1,13 @@
+.footerDiv {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & p {
+    color: black;
+    padding-bottom: 0;
+  }
+  & a {
+    color: $darkRed;
+  }
+}

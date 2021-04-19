@@ -15,13 +15,13 @@ const Nav = () => {
             <li className='navFont'>Mature</li></Link>
             <Link
                 activeClass="active"
-                to=""
+                to="KONTAKT"
                 spy={true}
                 smooth={true}
                 duration={400}>
-            <li onClick={()=>alert('Work in progress')} className='navFont' >Natjecanja</li></Link>
+            <li className='navFont' >Kontakt</li></Link>
             </ul>
-            <button className='kontakt' >Kontakt</button>
+            <button className='doniraj' >Doniraj</button>
         </nav>
     )
 }

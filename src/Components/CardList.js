@@ -1,7 +1,8 @@
 
 import Card from './Card'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import {MatureContext} from '../State/MatureContext'
 
 const CardList = ({sendRequest}) => {
 
@@ -22,15 +23,13 @@ const CardList = ({sendRequest}) => {
         }
     }
 
-    const [mature, setMature] = useState([])
+    const {mList} = useContext(MatureContext)
+    const [matureList, ] = mList;
 
-    useEffect(() => {
-        fetch('http://localhost:5000/mature')
-            .then(res => res.json())
-            .then(data => setMature(data))
-    }, [])
+    
 
     var data = []
+    var nisselcted = 0
 
 
     
@@ -38,11 +37,12 @@ const CardList = ({sendRequest}) => {
         <div className='cardListDiv'>
             <div className="gradientLeft"></div>
             <Splide className='splide'  options={primaryOptions}>
-                {mature.map((matura, i) =>{
+                {matureList.map((matura, i) =>{
                     return(
                         <SplideSlide className='test' key={i}><Card 
                             sendRequest={sendRequest}
                             data={data}
+                            nisselected={nisselcted}
                             predmet={matura.predmet}
                             slika={matura.slika}
                             dvijerazine={matura.dvijerazine}

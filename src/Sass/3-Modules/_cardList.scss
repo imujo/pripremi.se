@@ -2,7 +2,6 @@
 .cardListDiv {
   width: 100%;
   height: auto;
-  // padding-bottom: 30px;
   max-width: 1200px;
   position: relative;
 }
@@ -10,6 +9,7 @@
 // GRADIENT
 .gradientLeft {
   height: 600px;
+  max-height: 75vh;
   width: 170px;
   background-image: linear-gradient(to right, $lightRed, transparent);
   position: absolute;
