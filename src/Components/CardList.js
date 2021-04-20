@@ -29,7 +29,6 @@ const CardList = ({sendRequest}) => {
     
 
     var data = []
-    var nisselcted = 0
 
 
     
@@ -42,7 +41,6 @@ const CardList = ({sendRequest}) => {
                         <SplideSlide className='test' key={i}><Card 
                             sendRequest={sendRequest}
                             data={data}
-                            nisselected={nisselcted}
                             predmet={matura.predmet}
                             slika={matura.slika}
                             dvijerazine={matura.dvijerazine}

@@ -1,8 +1,10 @@
+import { Element } from "react-scroll";
+
 const Title = ({title}) => {
     return(
-        <div className="titleDiv" id={title}>
+        <Element className="titleDiv" id={title}>
             <h2>{title}</h2>
-        </div> 
+        </Element> 
     )
 }
 

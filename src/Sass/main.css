@@ -39,6 +39,7 @@ h5 {
 
 .logo {
   color: black;
+  color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
 }
@@ -117,6 +118,10 @@ p {
           justify-content: center;
   height: 90vh;
   background: radial-gradient(#e79797 5%, #c96d6d 60%);
+  background-image: url("/src/assets/background.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
   padding: 0 100px;
 }
 
@@ -204,6 +209,59 @@ html {
   gap: 30px;
 }
 
+.bodyDiv .dwld-alert {
+  position: absolute;
+  left: 50%;
+}
+
+.bodyDiv .dwld-alert p {
+  padding: 0;
+  margin: 0;
+}
+
+.bodyDiv .dwld-alert .loadingContainer {
+  width: 200px;
+  margin-left: -100px;
+  height: 30px;
+  background-color: white;
+}
+
+.bodyDiv .dwld-alert .loadingContainer .loaded {
+  height: 30px;
+  background-color: #2fc253;
+}
+
+.downloaded {
+  margin-left: -50px;
+  visibility: hidden;
+}
+
+.downloaded p {
+  color: #2fc253;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.downloaded[downloaded="1"] {
+  visibility: visible;
+  -webkit-animation: alert 0.5s linear;
+          animation: alert 0.5s linear;
+}
+
+.processing {
+  width: 130px;
+  margin-left: -65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .preuzmiButton {
   cursor: pointer;
   width: 200px;
@@ -232,6 +290,44 @@ html {
           box-shadow: none;
 }
 
+@-webkit-keyframes alert {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  66% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes alert {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  66% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 @media (max-width: 600px) {
   .bodyDiv {
     height: auto;
@@ -252,7 +348,7 @@ html {
 }
 
 .gradientLeft, .gradientRight {
-  height: 600px;
+  height: 440px;
   max-height: 75vh;
   width: 170px;
   background-image: -webkit-gradient(linear, left top, right top, from(#c96d6d), to(transparent));
@@ -265,7 +361,7 @@ html {
 .gradientRight {
   background-image: -webkit-gradient(linear, right top, left top, from(#c96d6d), to(transparent));
   background-image: linear-gradient(to left, #c96d6d, transparent);
-  right: -10px;
+  right: 0px;
   top: 0;
 }
 
@@ -994,7 +1090,8 @@ html {
     height: auto;
   }
   .kontaktDiv {
-    padding: 0 75px;
+    padding: 0;
+    margin: 0 50px;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: auto auto auto;

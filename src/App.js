@@ -14,13 +14,14 @@ const App = () => {
     const {height, width} = useWindowDimensions();
 
     return(
-        <Scrollbars
-            style={{ width: width, height: height }}
-            autoHide
-            autoHideTimeout={1000}
-            autoHideDuration={200}
-        >
-            <MatureProvider>
+
+        <MatureProvider>
+            <Scrollbars
+                style={{ width: width, height: height }}
+                autoHide
+                autoHideTimeout={1000}
+                autoHideDuration={200}
+            >
                 <div className='appDiv'>
                     <Nav  />
                     <Header />
@@ -30,8 +31,9 @@ const App = () => {
                     <Kontakt />
                     <Footer />
                 </div>
-            </MatureProvider>
-        </Scrollbars>
+            </Scrollbars>
+        </MatureProvider>
+       
 
 
     )

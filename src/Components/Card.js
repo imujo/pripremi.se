@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import {MatureContext} from '../State/MatureContext'
 import RazineError from './RazineError'
 
-const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
+const Card = ({predmet, dvijerazine, sendRequest, data}) => {
 
     // ANIMATION & IS SELECTED
     const [isselected, setisselected] = useState(0)
@@ -25,9 +25,6 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
     // RAZINA ERROR
     const [razinaerror, setrazinaError] = useState(0)
     const initialRender = useRef(true)
-
-    const {isselectedn} = useContext(MatureContext)
-    const [ ,setnumisselected] = isselectedn;
     
 
     // CHECK IF RAZINAS ARE SELECTED AND PUSH TO FETCH
@@ -120,7 +117,12 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
   
 
     return(
-        <div className='cardDiv' openanimation={openanimation} isselected={isselected} closeanimation={closeanimation} onAnimationEnd={selectToggle}>
+        <div 
+            className='cardDiv' 
+            openanimation={openanimation} 
+            isselected={isselected} 
+            closeanimation={closeanimation} 
+            onAnimationEnd={selectToggle}>
 
             <h3>{predmet}</h3>
 
@@ -167,11 +169,11 @@ const Card = ({predmet, dvijerazine, sendRequest, data, nisselected}) => {
                             />
                         </ThemeProvider>
                     </div>
-                    <p onClick={() => {setisselected(0); setcloseanimation(1); nisselected--;setnumisselected(nisselected)}} >Click to deselect</p>
+                    <p onClick={() => {setisselected(0); setcloseanimation(1);}} >Click to deselect</p>
                 </div>
                 
                 : 
-                <p onClick={() => {setopenanimation(1); nisselected=nisselected + 1; setnumisselected(nisselected)}} >Click to select</p>
+                <p onClick={() => setopenanimation(1)} >Click to select</p>
             }
 
         </div>

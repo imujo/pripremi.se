@@ -11,6 +11,9 @@ const MatureProvider = (props) => {
     const [numisselected ,setnumisselected] = useState(0) //remove
     const [matureList, setmatureList] = useState([])
     const [matureLoaded, setmatureLoaded] = useState(false)
+    const [processing, setprocessing] = useState(0)
+    const [percentage, setpercentage] = useState(0)
+    const [downloaded, setdownloaded] = useState(0)
 
     useEffect(() => {
         let isError = 0
@@ -23,6 +26,7 @@ const MatureProvider = (props) => {
         if(initialRender.current){
             initialRender.current = false;
         }else if (isError===0){
+            setprocessing(1)
             var result = {};
             for (var i = 0; i < request.length; i++) {
                 result[request[i].predmet] = {
@@ -40,7 +44,8 @@ const MatureProvider = (props) => {
             .then(
                 fetchProgress({
                     onProgress(progress){
-                        console.log(progress.percentage)
+                        setprocessing(0)
+                        setpercentage(progress.percentage)
                     }
                 })
             )
@@ -53,6 +58,9 @@ const MatureProvider = (props) => {
                 document.body.appendChild(link);
                 link.click();
                 link.parentNode.removeChild(link);
+                setpercentage(0)
+                setdownloaded(1)
+                setTimeout(function(){ setdownloaded(0) }, 5000);
               });
 
         }
@@ -63,7 +71,8 @@ const MatureProvider = (props) => {
             .then(res => res.json())
             .then(data => setmatureList(data))
             .then(setmatureLoaded(true))
-            .catch(err => console.log(err))
+            .catch(err => {console.log(err); setmatureLoaded(false)})
+            
     }, [sortOrder])
 
     return(
@@ -73,6 +82,9 @@ const MatureProvider = (props) => {
             isselectedn: [numisselected ,setnumisselected],
             mList: [matureList, setmatureList],
             mLoaded: [matureLoaded, setmatureLoaded],
+            percentageDwnl: [percentage, setpercentage],
+            isprocessing: [processing, setprocessing],
+            isdwnld:[downloaded, setdownloaded],
         }} >
             {props.children}
         </MatureContext.Provider>

@@ -8,7 +8,7 @@
 
 // GRADIENT
 .gradientLeft {
-  height: 600px;
+  height: 440px;
   max-height: 75vh;
   width: 170px;
   background-image: linear-gradient(to right, $lightRed, transparent);
@@ -19,7 +19,7 @@
 .gradientRight {
   @extend .gradientLeft;
   background-image: linear-gradient(to left, $lightRed, transparent);
-  right: -10px;
+  right: 0px;
   top: 0;
 }
 

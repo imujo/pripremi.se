@@ -5,6 +5,10 @@
   justify-content: center;
   height: 90vh;
   background: radial-gradient($greyRed 5%, $lightRed 60%);
+  background-image: url("/src/assets/background.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
   padding: 0 100px;
   .title {
     width: 100%;
