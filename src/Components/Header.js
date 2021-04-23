@@ -7,7 +7,7 @@ const Header = () => {
             <div className="title">
                 <h1 className='logo'>PRIPREMI<div className='nastavak'>SE</div></h1>
             </div>
-            <p className='subheading' >Skidanje matura i pripreme za test</p>
+            <p className='subheading' >Preuzumanje matura i pripreme za ispit</p>
         </div>
     )
 }

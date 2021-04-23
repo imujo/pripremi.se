@@ -169,7 +169,7 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
                             />
                         </ThemeProvider>
                     </div>
-                    <p onClick={() => {setisselected(0); setcloseanimation(1);}} >Click to deselect</p>
+                    <p onClick={() => {setisselected(0); setcloseanimation(1); setrazinaError(0)}} >Click to deselect</p>
                 </div>
                 
                 : 

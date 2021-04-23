@@ -3,15 +3,18 @@
   // Deselected
   height: 420px;
   width: 320px;
-  background-color: $greyRed;
-  border-radius: 25px;
+
   justify-content: center;
-  display: grid;
   position: relative;
+  display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30% 70%;
   gap: 2px;
+
+  background-color: $greyRed;
+  border-radius: 25px;
   transform: scale(0.98);
+
   &[isselected="0"] {
     & > p {
       display: flex;

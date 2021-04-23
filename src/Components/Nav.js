@@ -2,9 +2,10 @@ import { Link } from "react-scroll";
 
 const Nav = () => {
 
+
     return(
         <nav className="navBody">
-            <div className='logo'>PRIPREMI<div className='nastavak'>SE</div></div>
+            <div className='logoSvg'></div>
             <ul>
             <Link
                 activeClass="active"
@@ -22,8 +23,18 @@ const Nav = () => {
             <li className='navFont' >Kontakt</li></Link>
             </ul>
             <button className='doniraj' >Doniraj</button>
+            
         </nav>
     )
 }
 
 export default Nav;
+
+
+
+
+  
+
+
+
+

@@ -4,6 +4,17 @@ button {
   background-color: transparent;
 }
 
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+}
+
 h1 {
   margin: 0;
   font-size: 130px;
@@ -117,7 +128,7 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   height: 90vh;
-  background: radial-gradient(#e79797 5%, #c96d6d 60%);
+  background: radial-gradient(#f0c5c5 5%, #c96d6d 60%);
   background-image: url("/src/assets/background.jpg");
   background-repeat: none;
   background-size: cover;
@@ -176,17 +187,6 @@ p {
   }
 }
 
-body {
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 100%;
-}
-
-html {
-  width: 100%;
-}
-
 .bodyDiv {
   height: calc(100vh - 150px);
   padding-top: 50px;
@@ -228,7 +228,7 @@ html {
 
 .bodyDiv .dwld-alert .loadingContainer .loaded {
   height: 30px;
-  background-color: #2fc253;
+  background-color: #c70000;
 }
 
 .downloaded {
@@ -237,7 +237,7 @@ html {
 }
 
 .downloaded p {
-  color: #2fc253;
+  color: #c70000;
   font-weight: 600;
   font-size: 20px;
 }
@@ -331,12 +331,15 @@ html {
 @media (max-width: 600px) {
   .bodyDiv {
     height: auto;
-    padding-top: 120px;
+    padding-top: 180px;
   }
   .preuzmiButton {
     width: 125px;
     height: 50px;
     font-size: 12.5px;
+  }
+  .dwld-alert {
+    bottom: 140px;
   }
 }
 
@@ -383,19 +386,19 @@ html {
 .cardDiv {
   height: 420px;
   width: 320px;
-  background-color: #e79797;
-  border-radius: 25px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   display: -ms-grid;
   display: grid;
-  position: relative;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   -ms-grid-rows: 30% 70%;
       grid-template-rows: 30% 70%;
   gap: 2px;
+  background-color: #f0c5c5;
+  border-radius: 25px;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
@@ -528,7 +531,7 @@ html {
   100% {
     -webkit-box-shadow: none;
             box-shadow: none;
-    background-color: #e79797;
+    background-color: #f0c5c5;
   }
   50% {
     -webkit-transform: scale(0.97);
@@ -547,7 +550,7 @@ html {
   100% {
     -webkit-box-shadow: none;
             box-shadow: none;
-    background-color: #e79797;
+    background-color: #f0c5c5;
   }
   50% {
     -webkit-transform: scale(0.97);
@@ -591,6 +594,15 @@ html {
   gap: 10px;
 }
 
+.navBody .logoSvg {
+  display: block;
+  width: 30px;
+  height: 50px;
+  background-image: url(/src/assets/Logo.svg);
+  background-repeat: no-repeat;
+  background-size: 30px 50px;
+}
+
 .navBody div {
   font-size: 22px;
   display: -webkit-box;
@@ -600,14 +612,14 @@ html {
 
 .navBody .doniraj {
   border: none;
-  background-color: #2fc253;
+  background-color: #c70000;
   width: 120px;
   height: 35px;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #196d2e;
+  color: white;
 }
 
 .navBody .doniraj:focus {
@@ -1014,7 +1026,7 @@ html {
 }
 
 .kontaktDiv form .sent[sent="1"] {
-  background-color: #2fc253;
+  background-color: #c70000;
 }
 
 .kontaktDiv form .sent p {
@@ -1038,7 +1050,7 @@ html {
   width: 100%;
   border: none;
   outline: none;
-  background-color: #e79797;
+  background-color: #f0c5c5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 10px;
@@ -1092,8 +1104,8 @@ html {
   .kontaktDiv {
     padding: 0;
     margin: 0 50px;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: 80%;
+        grid-template-columns: 80%;
     -ms-grid-rows: auto auto auto;
         grid-template-rows: auto auto auto;
     gap: 50px;
@@ -1104,6 +1116,9 @@ html {
   }
   .kontaktDiv form > * {
     margin-top: 50px;
+  }
+  .kontaktDiv form .email {
+    margin-bottom: 50px;
   }
   .aboutDiv {
     width: 70%;
@@ -1131,5 +1146,84 @@ html {
 
 .footerDiv a {
   color: #661515;
+}
+
+.napomenaDiv {
+  height: 180px;
+  width: 220px;
+  background-color: rgba(128, 128, 128, 0.7);
+  position: fixed;
+  border-radius: 10px;
+  top: 150px;
+  right: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 17px;
+  z-index: 10000;
+  visibility: hidden;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.napomenaDiv .close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 25px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.napomenaDiv[disclamer="1"] {
+  visibility: visible;
+  opacity: 0;
+  -webkit-animation: disclamer 5s;
+          animation: disclamer 5s;
+}
+
+.napomenaDiv p {
+  padding: 0;
+  font-size: 10px;
+  line-height: 17px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.napomenaDiv .napomena {
+  font-size: 15px;
+}
+
+.napomenaDiv a {
+  color: #661515;
+}
+
+@-webkit-keyframes disclamer {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disclamer {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

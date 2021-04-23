@@ -1,0 +1,58 @@
+.napomenaDiv {
+  height: 180px;
+  width: 220px;
+  background-color: rgba(128, 128, 128, 0.7);
+  position: fixed;
+  border-radius: 10px;
+  top: 150px;
+  right: 15px;
+  box-sizing: border-box;
+  padding: 17px;
+  z-index: 10000;
+  visibility: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+  & .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 25px;
+    color: $lightGrey;
+    cursor: pointer;
+  }
+
+  &[disclamer="1"] {
+    visibility: visible;
+    opacity: 0;
+    animation: disclamer 5s;
+  }
+
+  & p {
+    padding: 0;
+    font-size: 10px;
+    line-height: 17px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  .napomena {
+    font-size: 15px;
+  }
+  & a {
+    color: $darkRed;
+  }
+}
+
+@keyframes disclamer {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,15 +1,19 @@
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
 
+
+
 const Kontakt = () => {
 
     const [sent, setsent] = useState(0)
     const [notsent, setnotsent] = useState(0)
 
+    
+
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_rnf9fwd', 'template_qyggx9e', e.target, 'user_75P8SGsgcUd9zU5svZeJ9')
+        emailjs.sendForm('service_rnf9fwd', 'template_qyggx9e' , e.target, 'user_75P8SGsgcUd9zU5svZeJ9')
         .then((result) => {
             setsent(1)
             setTimeout(function(){ setsent(0) }, 4000);
@@ -19,6 +23,7 @@ const Kontakt = () => {
         });
         e.target.reset()
     }
+    
     
 
     return(

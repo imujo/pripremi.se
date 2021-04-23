@@ -9,7 +9,7 @@ const CardList = ({sendRequest}) => {
     const primaryOptions = {
         type: 'slide',
         autoWidth: true,
-        drag: false,
+        drag: true,
         gap: '80px',
         rewind: true,
         perMove: 1,

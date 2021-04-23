@@ -1,4 +1,4 @@
-// TODO fix error showing when opening cards after hitting "Preuzmi"
+
 
 const RazineError = ({razinaerror}) => {
     return(

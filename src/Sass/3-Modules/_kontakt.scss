@@ -113,7 +113,7 @@
   .kontaktDiv {
     padding: 0;
     margin: 0 50px;
-    grid-template-columns: 100%;
+    grid-template-columns: 80%;
     grid-template-rows: auto auto auto;
     gap: 50px;
     grid-template-areas:
@@ -124,6 +124,9 @@
       max-width: 700px;
       & > * {
         margin-top: 50px;
+      }
+      .email {
+        margin-bottom: 50px;
       }
     }
   }

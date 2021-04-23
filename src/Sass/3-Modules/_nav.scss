@@ -10,6 +10,15 @@
   margin: 0 auto;
   gap: 10px;
 
+  & .logoSvg {
+    display: block;
+    width: 30px;
+    height: 50px;
+    background-image: url(/src/assets/Logo.svg);
+    background-repeat: no-repeat;
+    background-size: 30px 50px;
+  }
+
   & div {
     font-size: 22px;
     display: flex;
@@ -25,7 +34,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: $darkGreen;
+    color: white;
     &:focus {
       outline: none;
     }
