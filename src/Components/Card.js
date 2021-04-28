@@ -8,6 +8,7 @@ import RazineError from './RazineError'
 
 const Card = ({predmet, dvijerazine, sendRequest, data}) => {
 
+
     // ANIMATION & IS SELECTED
     const [isselected, setisselected] = useState(0)
     const [closeanimation, setcloseanimation] = useState(0)
@@ -25,6 +26,7 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
     // RAZINA ERROR
     const [razinaerror, setrazinaError] = useState(0)
     const initialRender = useRef(true)
+    const initialRender2 = useRef(true)
     
 
     // CHECK IF RAZINAS ARE SELECTED AND PUSH TO FETCH
@@ -58,10 +60,15 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
 
     // ADD PREDMET CLICK TO DATABASE
     useEffect(() => {
-        fetch(`http://localhost:5000/iterate/${predmet}`,{
-            method: 'post',
-            headers: {'Content-Type':'application/json'}
-        })
+        if(initialRender2.current){
+            initialRender2.current = false;
+        }else{
+            fetch(`http://localhost:5000/iterate/${predmet}`,{
+                method: 'post',
+                headers: {'Content-Type':'application/json'}
+            })
+        }
+        
     }, [isselected, predmet])
 
     const muiTheme = createMuiTheme({
