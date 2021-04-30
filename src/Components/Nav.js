@@ -22,7 +22,7 @@ const Nav = () => {
                 duration={400}>
             <li className='navFont' >Kontakt</li></Link>
             </ul>
-            <button className='doniraj' >Doniraj</button>
+            <button className='doniraj' onClick={()=>alert('Trenutno ne primamo financijske donacije. Podržite nas tako da podijelite stranicu s drugima :)')} >Doniraj</button>
             
         </nav>
     )
