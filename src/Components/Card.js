@@ -17,6 +17,7 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
     // GLOBAL STATE
     const {download} = useContext(MatureContext)
     const [, setrequest] = download;
+    const {REACT_APP_IP} = process.env
 
     // FORM
     const [years, setYears] = useState([2011, 2019]);
@@ -63,13 +64,13 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
         if(initialRender2.current){
             initialRender2.current = false;
         }else{
-            fetch(`http://localhost:5000/iterate/${predmet}`,{
+            fetch(`http://${REACT_APP_IP}:5000/iterate/${predmet}`,{
                 method: 'post',
                 headers: {'Content-Type':'application/json'}
             })
         }
         
-    }, [isselected, predmet])
+    }, [REACT_APP_IP, isselected, predmet])
 
     const muiTheme = createMuiTheme({
         overrides:{

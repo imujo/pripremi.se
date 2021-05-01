@@ -8,12 +8,12 @@ const Kontakt = () => {
     const [sent, setsent] = useState(0)
     const [notsent, setnotsent] = useState(0)
 
-    
+    const {REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, REACT_APP_EMAILJS_USER_ID} = process.env
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_rnf9fwd', 'template_qyggx9e' , e.target, 'user_75P8SGsgcUd9zU5svZeJ9')
+        emailjs.sendForm(REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID , e.target, REACT_APP_EMAILJS_USER_ID)
         .then((result) => {
             setsent(1)
             setTimeout(function(){ setsent(0) }, 4000);

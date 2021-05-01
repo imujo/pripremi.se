@@ -14,6 +14,7 @@ const MatureProvider = (props) => {
     const [processing, setprocessing] = useState(0)
     const [percentage, setpercentage] = useState(0)
     const [downloaded, setdownloaded] = useState(0)
+    const {REACT_APP_IP} = process.env
 
     useEffect(() => {
         let isError = 0
@@ -36,7 +37,7 @@ const MatureProvider = (props) => {
                     years: request[i].years
                 };
             }
-            fetch('http://localhost:5000/matured',{
+            fetch(`http://${REACT_APP_IP}:5000/matured`,{
                 method: 'post',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(result)
@@ -64,16 +65,16 @@ const MatureProvider = (props) => {
               });
 
         }
-    }, [request])
+    }, [REACT_APP_IP, request])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mature/${sortOrder}`)
+        fetch(`http://${REACT_APP_IP}:5000/mature/${sortOrder}`)
             .then(res => res.json())
             .then(data => setmatureList(data))
             .then(setmatureLoaded(true))
             .catch(err => {console.log(err); setmatureLoaded(false)})
             
-    }, [sortOrder])
+    }, [REACT_APP_IP, sortOrder])
 
     return(
         <MatureContext.Provider value={{
