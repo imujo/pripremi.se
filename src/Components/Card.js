@@ -64,7 +64,7 @@ const Card = ({predmet, dvijerazine, sendRequest, data}) => {
         if(initialRender2.current){
             initialRender2.current = false;
         }else{
-            fetch(`http://${REACT_APP_IP}:5000/iterate/${predmet}`,{
+            fetch(`${REACT_APP_IP}:5000/iterate/${predmet}`,{
                 method: 'post',
                 headers: {'Content-Type':'application/json'}
             })

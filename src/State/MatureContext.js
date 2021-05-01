@@ -37,7 +37,7 @@ const MatureProvider = (props) => {
                     years: request[i].years
                 };
             }
-            fetch(`http://${REACT_APP_IP}:5000/matured`,{
+            fetch(`${REACT_APP_IP}:5000/matured`,{
                 method: 'post',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify(result)
@@ -68,7 +68,7 @@ const MatureProvider = (props) => {
     }, [REACT_APP_IP, request])
 
     useEffect(() => {
-        fetch(`http://${REACT_APP_IP}:5000/mature/${sortOrder}`)
+        fetch(`${REACT_APP_IP}:5000/mature/${sortOrder}`)
             .then(res => res.json())
             .then(data => setmatureList(data))
             .then(setmatureLoaded(true))
