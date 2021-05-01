@@ -398,7 +398,8 @@ p {
   -ms-grid-rows: 30% 70%;
       grid-template-rows: 30% 70%;
   gap: 2px;
-  background-color: #d6d6d6;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d6d6d6), to(#eeeeee));
+  background-image: linear-gradient(to top right, #d6d6d6, #eeeeee);
   border-radius: 25px;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
@@ -1083,7 +1084,6 @@ p {
   width: 100%;
   border: none;
   outline: none;
-  background-color: #d6d6d6;
   background-image: -webkit-gradient(linear, left bottom, right top, from(#d6d6d6), to(#eeeeee));
   background-image: linear-gradient(to top right, #d6d6d6, #eeeeee);
   -webkit-box-sizing: border-box;
