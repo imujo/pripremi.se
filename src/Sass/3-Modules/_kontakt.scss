@@ -1,6 +1,6 @@
 .kontaktBody {
   height: calc(100vh - 100px);
-  background-color: $lightRed;
+  background-color: white;
   display: flex;
   justify-content: center;
 }
@@ -81,12 +81,14 @@
   border: none;
   outline: none;
   background-color: $greyRed;
+  background-image: linear-gradient(to top right, $greyRed, rgb(238, 238, 238));
   box-sizing: border-box;
   padding-left: 10px;
   font-size: 17px;
   color: $darkRed;
   &::placeholder {
     color: $lightGrey;
+    color: $grey;
   }
 }
 

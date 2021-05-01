@@ -60,7 +60,7 @@ h5 {
 }
 
 p {
-  color: #f1f1f1;
+  color: #686868;
   font-family: "Montserrat";
   font-size: 15px;
   padding-bottom: 20px;
@@ -68,7 +68,7 @@ p {
 
 .subheading {
   font: normal normal 200 20px "Montserrat", sans-serif;
-  color: #f1f1f1;
+  color: #dfdddd;
 }
 
 .navFont {
@@ -80,7 +80,7 @@ p {
 .errorFont {
   font-size: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #f1f1f1;
+  color: #dfdddd;
 }
 
 @media (max-width: 1100px) {
@@ -128,7 +128,7 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   height: 90vh;
-  background: radial-gradient(#f0c5c5 5%, #c96d6d 60%);
+  background: radial-gradient(#d6d6d6 5%, #bf5b5b 60%);
   background-image: url("/src/assets/background.jpg");
   background-repeat: none;
   background-size: cover;
@@ -190,7 +190,7 @@ p {
 .bodyDiv {
   height: calc(100vh - 150px);
   padding-top: 50px;
-  background-color: #c96d6d;
+  background-color: white;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -228,7 +228,7 @@ p {
 
 .bodyDiv .dwld-alert .loadingContainer .loaded {
   height: 30px;
-  background-color: #c70000;
+  background-color: #15bd15;
 }
 
 .downloaded {
@@ -237,7 +237,7 @@ p {
 }
 
 .downloaded p {
-  color: #c70000;
+  color: #15bd15;
   font-weight: 600;
   font-size: 20px;
 }
@@ -354,16 +354,16 @@ p {
   height: 440px;
   max-height: 75vh;
   width: 170px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#c96d6d), to(transparent));
-  background-image: linear-gradient(to right, #c96d6d, transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(#bf5b5b), to(transparent));
+  background-image: linear-gradient(to right, #bf5b5b, transparent);
   position: absolute;
   pointer-events: none;
   z-index: 100;
 }
 
 .gradientRight {
-  background-image: -webkit-gradient(linear, right top, left top, from(#c96d6d), to(transparent));
-  background-image: linear-gradient(to left, #c96d6d, transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(#bf5b5b), to(transparent));
+  background-image: linear-gradient(to left, #bf5b5b, transparent);
   right: 0px;
   top: 0;
 }
@@ -397,10 +397,14 @@ p {
   -ms-grid-rows: 30% 70%;
       grid-template-rows: 30% 70%;
   gap: 2px;
-  background-color: #f0c5c5;
+  background-color: #d6d6d6;
   border-radius: 25px;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
+}
+
+.cardDiv h3 {
+  color: #686868;
 }
 
 .cardDiv[isselected="0"] > p {
@@ -448,6 +452,10 @@ p {
           box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.438);
 }
 
+.cardDiv[isselected="1"][openanimation="0"][closeanimation="0"] h3 {
+  color: #661515;
+}
+
 .cardDiv[isselected="1"][openanimation="0"][closeanimation="0"] > div {
   display: -ms-grid;
   display: grid;
@@ -473,6 +481,7 @@ p {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  color: white;
 }
 
 .razine {
@@ -531,7 +540,10 @@ p {
   100% {
     -webkit-box-shadow: none;
             box-shadow: none;
-    background-color: #f0c5c5;
+    background-color: #d6d6d6;
+    h3 {
+      color: #686868;
+    }
   }
   50% {
     -webkit-transform: scale(0.97);
@@ -543,6 +555,9 @@ p {
     background-color: #c74c4c;
     -webkit-box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.438);
             box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.438);
+    h3 {
+      color: #661515;
+    }
   }
 }
 
@@ -550,7 +565,10 @@ p {
   100% {
     -webkit-box-shadow: none;
             box-shadow: none;
-    background-color: #f0c5c5;
+    background-color: #d6d6d6;
+    h3 {
+      color: #686868;
+    }
   }
   50% {
     -webkit-transform: scale(0.97);
@@ -562,6 +580,9 @@ p {
     background-color: #c74c4c;
     -webkit-box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.438);
             box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.438);
+    h3 {
+      color: #661515;
+    }
   }
 }
 
@@ -706,6 +727,14 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #bf5b5b;
+  -webkit-box-shadow: 100px 100px 10px red;
+          box-shadow: 100px 100px 10px red;
+  z-index: 100;
+}
+
+.titleDiv h2 {
+  color: white;
 }
 
 @media (max-width: 1100px) {
@@ -827,7 +856,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  border-bottom: 1.5px solid #661515;
+  border-bottom: 1.5px solid black;
   width: 100%;
 }
 
@@ -836,10 +865,11 @@ p {
   padding: 0;
   margin-bottom: 10px;
   width: 80%;
+  color: black;
 }
 
 .sortButtonBody .expandIcon {
-  color: #661515;
+  color: black;
   margin-top: 10px;
   margin-left: 5px;
   cursor: pointer;
@@ -886,12 +916,13 @@ p {
 .sortButtonBody .expanded[isexpanded="1"] {
   background-color: white;
   height: auto;
-  border-top: 1px solid #661515;
+  border-top: 1px solid black;
 }
 
 @-webkit-keyframes expand {
   0% {
     height: 1px;
+    border-top: 1px solid black;
     background-color: white;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -899,7 +930,7 @@ p {
   100% {
     height: 78px;
     background-color: white;
-    border-top: 1px solid #661515;
+    border-top: 1px solid black;
     -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   }
@@ -908,6 +939,7 @@ p {
 @keyframes expand {
   0% {
     height: 1px;
+    border-top: 1px solid black;
     background-color: white;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -915,7 +947,7 @@ p {
   100% {
     height: 78px;
     background-color: white;
-    border-top: 1px solid #661515;
+    border-top: 1px solid black;
     -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   }
@@ -929,7 +961,7 @@ p {
 
 .kontaktBody {
   height: calc(100vh - 100px);
-  background-color: #c96d6d;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1050,7 +1082,9 @@ p {
   width: 100%;
   border: none;
   outline: none;
-  background-color: #f0c5c5;
+  background-color: #d6d6d6;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d6d6d6), to(#eeeeee));
+  background-image: linear-gradient(to top right, #d6d6d6, #eeeeee);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 10px;
@@ -1059,19 +1093,23 @@ p {
 }
 
 .input-wide::-webkit-input-placeholder, .input-narrow::-webkit-input-placeholder {
-  color: #f1f1f1;
+  color: #dfdddd;
+  color: #686868;
 }
 
 .input-wide:-ms-input-placeholder, .input-narrow:-ms-input-placeholder {
-  color: #f1f1f1;
+  color: #dfdddd;
+  color: #686868;
 }
 
 .input-wide::-ms-input-placeholder, .input-narrow::-ms-input-placeholder {
-  color: #f1f1f1;
+  color: #dfdddd;
+  color: #686868;
 }
 
 .input-wide::placeholder, .input-narrow::placeholder {
-  color: #f1f1f1;
+  color: #dfdddd;
+  color: #686868;
 }
 
 .input-narrow {
@@ -1170,7 +1208,7 @@ p {
   right: 15px;
   top: 15px;
   font-size: 25px;
-  color: #f1f1f1;
+  color: white;
   cursor: pointer;
 }
 
@@ -1187,6 +1225,7 @@ p {
   line-height: 17px;
   margin: 0;
   margin-bottom: 15px;
+  color: white;
 }
 
 .napomenaDiv .napomena {

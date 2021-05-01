@@ -2,7 +2,7 @@
 .bodyDiv {
   height: calc(100vh - 150px);
   padding-top: 50px;
-  background-color: $lightRed;
+  background-color: white;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
       background-color: white;
       & .loaded {
         height: 30px;
-        background-color: $greenColor;
+        background-color: rgb(21, 189, 21);
       }
     }
   }
@@ -36,7 +36,7 @@
   margin-left: -50px;
   visibility: hidden;
   & p {
-    color: $greenColor;
+    color: rgb(21, 189, 21);
     font-weight: 600;
     font-size: 20px;
   }

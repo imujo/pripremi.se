@@ -34,7 +34,7 @@ const CardList = ({sendRequest}) => {
     
     return(
         <div className='cardListDiv'>
-            <div className="gradientLeft"></div>
+            {/* <div className="gradientLeft"></div> */}
             <Splide className='splide'  options={primaryOptions}>
                 {matureList.map((matura, i) =>{
                     return(
@@ -49,7 +49,7 @@ const CardList = ({sendRequest}) => {
                     )
                 })}
             </Splide>
-            <div className="gradientRight"></div>
+            {/* <div className="gradientRight"></div> */}
         </div>
     )
 }

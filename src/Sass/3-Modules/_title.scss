@@ -3,6 +3,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $lightRed;
+  box-shadow: 100px 100px 10px red;
+  z-index: 100;
+  & h2 {
+    color: white;
+  }
 }
 
 @media (max-width: 1100px) {
